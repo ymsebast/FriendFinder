@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Survey</title>
+    <style>
+        .main{
+            margin: 30px 20px;
+        }
+        .q{
+            margin: 20px;
+            text-align: center;
+        }
+        [type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+            border: 2px solid #f77;
+        }
+        .btn {
+            text-decoration: none;
+            color: #fff;
+            background-color: #f77;
+            text-align: center;
+            letter-spacing: .5px;
+            -webkit-transition: background-color .2s ease-out;
+            transition: background-color .2s ease-out;
+            cursor: pointer;
+            margin: 0px 550px;
+        }
+        .btn:hover {
+            background-color: #f77;
+        }
+        #sendbtn{
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav1">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Friend <i class="material-icons">child_care</i> <i class="material-icons right">child_care</i>
+                Finder
+            </a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="/survey">Survey</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="row" id="userEntry">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6 ">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Image Link</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="row" id="questions">
+
+            <div class="col s6">
+                <div class="card teal">
+                    <div class="card-content white-text">
+                        <span class="card-title">Question 1</span>
+                        <p> It is often difficult for you to relate to other people's feelings </p>
+                    </div>
+                    <div class="card-action">
+                        <form id="q1" class="q">
+                            <div class="row">
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">1 (Strongly Disagree)</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">2</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">3</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">4</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">5 (Strongly Agree)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div class="card teal">
+                    <div class="card-content white-text">
+                        <span class="card-title">Question 1</span>
+                        <p> It is often difficult for you to relate to other people's feelings </p>
+                    </div>
+                    <div class="card-action">
+                        <form id="q1" class="q">
+                            <div class="row">
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">1 (Strongly Disagree)</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">2</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">3</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">4</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">5 (Strongly Agree)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div class="card teal">
+                    <div class="card-content white-text">
+                        <span class="card-title">Question 1</span>
+                        <p> It is often difficult for you to relate to other people's feelings </p>
+                    </div>
+                    <div class="card-action">
+                        <form id="q1" class="q">
+                            <div class="row">
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">1 (Strongly Disagree)</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">2</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">3</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">4</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">5 (Strongly Agree)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="card teal">
+                    <div class="card-content white-text">
+                        <span class="card-title">Question 1</span>
+                        <p> It is often difficult for you to relate to other people's feelings </p>
+                    </div>
+                    <div class="card-action">
+                        <form id="q1" class="q">
+                            <div class="row">
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">1 (Strongly Disagree)</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">2</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">3</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">4</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">5 (Strongly Agree)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="card teal">
+                    <div class="card-content white-text">
+                        <span class="card-title">Question 1</span>
+                        <p> It is often difficult for you to relate to other people's feelings </p>
+                    </div>
+                    <div class="card-action">
+                        <form id="q1" class="q">
+                            <div class="row">
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">1 (Strongly Disagree)</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">2</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">3</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">4</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">5 (Strongly Agree)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="card teal">
+                    <div class="card-content white-text">
+                        <span class="card-title">Question 1</span>
+                        <p> It is often difficult for you to relate to other people's feelings </p>
+                    </div>
+                    <div class="card-action">
+                        <form id="q1" class="q">
+                            <div class="row">
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">1 (Strongly Disagree)</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">2</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">3</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">4</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">5 (Strongly Agree)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="card teal">
+                    <div class="card-content white-text">
+                        <span class="card-title">Question 1</span>
+                        <p> It is often difficult for you to relate to other people's feelings </p>
+                    </div>
+                    <div class="card-action">
+                        <form id="q1" class="q">
+                            <div class="row">
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">1 (Strongly Disagree)</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">2</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">3</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">4</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">5 (Strongly Agree)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="card teal">
+                    <div class="card-content white-text">
+                        <span class="card-title">Question 1</span>
+                        <p> It is often difficult for you to relate to other people's feelings </p>
+                    </div>
+                    <div class="card-action">
+                        <form id="q1" class="q">
+                            <div class="row">
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">1 (Strongly Disagree)</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">2</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">3</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">4</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">5 (Strongly Agree)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="card teal">
+                    <div class="card-content white-text">
+                        <span class="card-title">Question 1</span>
+                        <p> It is often difficult for you to relate to other people's feelings </p>
+                    </div>
+                    <div class="card-action">
+                        <form id="q1" class="q">
+                            <div class="row">
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">1 (Strongly Disagree)</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">2</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">3</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">4</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">5 (Strongly Agree)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="card teal">
+                    <div class="card-content white-text">
+                        <span class="card-title">Question 1</span>
+                        <p> It is often difficult for you to relate to other people's feelings </p>
+                    </div>
+                    <div class="card-action">
+                        <form id="q1" class="q">
+                            <div class="row">
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">1 (Strongly Disagree)</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">2</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">3</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">4</span>
+                                    </label>
+                                </div>
+                                <div class="col s2">
+                                    <label>
+                                        <input name="group1" type="radio" class="with-gap" />
+                                        <span class="white-text">5 (Strongly Agree)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <button id="sendbtn" class="btn waves-effect waves-light" type="submit" name="action">
+            Submit <i class="material-icons right">send</i>
+        </button>
+    </div>
+
+
+</body>
+
+</html>
