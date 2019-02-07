@@ -11,6 +11,21 @@ var PORT = 3000;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Create a set of variables (hint: arrays of objects) for holding the reservation and waitlist data
-// DATA
-// ============================================================
+
+//data
+var friends = require("./app/data/friends");
+
+
+//html routing
+var htmlroutes = require("./app/routing/htmlRoutes");
+app.use('/',htmlroutes);
+
+//api routing
+var apiroutes = require("./app/routing/apiRoutes");
+app.use('/',apiroutes); 
+
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function () {
+    console.log("App listening on PORTS " + PORT);
+});
