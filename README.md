@@ -7,3 +7,7 @@ Answer 10 survey questions
 Press Submit 
 ![Submit](/survey_submit.png)
 
+Get an alert of compatible new friend
+![Alert](/pop.png)
+
+
