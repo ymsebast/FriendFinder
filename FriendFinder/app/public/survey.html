@@ -16,16 +16,21 @@
 
     <title>Survey</title>
     <style>
-        .main{
+        .main {
             margin: 30px 20px;
         }
-        .q{
+
+        .q {
             margin: 20px;
             text-align: center;
         }
-        [type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+
+        [type="radio"]:checked+span:after,
+        [type="radio"].with-gap:checked+span:before,
+        [type="radio"].with-gap:checked+span:after {
             border: 2px solid #f77;
         }
+
         .btn {
             text-decoration: none;
             color: #fff;
@@ -37,22 +42,26 @@
             cursor: pointer;
             margin: 0px 550px;
         }
+
         .btn:hover {
             background-color: #f77;
         }
-        #sendbtn{
+
+        #sendbtn {
             margin-right: 20px;
         }
-        body{
+
+        body {
             background-color: #ffebee;
         }
     </style>
 </head>
 
 <body>
-    <nav id="nav1">
+     <nav id="nav1">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">Friend <i class="material-icons">child_care</i> <i class="material-icons right">child_care</i>
+            <a href="#" class="brand-logo center">Friend <i class="material-icons">child_care</i> <i
+                    class="material-icons right">child_care</i>
                 Finder
             </a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -544,16 +553,19 @@
             var answ9 = $('input[name=group9]:checked').val();
             var answ10 = $('input[name=group10]:checked').val();
             answers.push(answ1, answ2, answ3, answ4, answ5, answ6, answ7, answ8, answ9, answ10);
-            alert(answers[0]);
+            
+            (answers[0]);
             var newFriend = {
                 name: name,
                 link: link,
-                scores: answers
+                scores: answers,
+                totalDiff: 0
             };
             //  adds newFriend
             $.post("/api/friends", newFriend)
                 .then(function (data) {
                     console.log(data);
+                    alert(data.name);
                 });
         });
     </script>

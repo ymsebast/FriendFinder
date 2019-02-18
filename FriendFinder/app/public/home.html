@@ -26,10 +26,10 @@
         }
 
         .card {
-            width: 10%;
             margin: 20px;
         }
-        .friends{
+
+        .friends {
             margin-left: 150px;
         }
     </style>
@@ -38,7 +38,8 @@
 <body>
     <nav id="nav1">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">Friend <i class="material-icons">child_care</i> <i class="material-icons right">child_care</i>
+            <a href="#" class="brand-logo center">Friend <i class="material-icons">child_care</i> <i
+                    class="material-icons right">child_care</i>
                 Finder
             </a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -48,49 +49,34 @@
                 <li><a href="/survey">Survey</a></li>
             </ul>
         </div>
-        <div class="main">
-            <div class="row friends">
-                <div class="card col s3">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="images/office.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">This is a link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-                <div class="card col s3">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="images/office.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">This is a link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-                <div class="card col s3">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="images/office.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">This is a link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </nav>
+    <div class="main">
+        <div class="row friends" id="data">
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Card Title</span>
+                        </div>
                     </div>
                 </div>
             </div>
-    </nav>
+        </div>
+        <script>
+            $.get("/api/friends", function (data) {
+                console.log(data);
+                var html = "";
+                for (var i = 0; i < data.length; i++) {
+                    html += "<div class='row'> <div class='col s12 m7'> <div class='card'> <div class='card-image'><img src='";
+                    html += data.photo + "'>";
+                    html += "<span class='card-title'>" + data.name + "</span>";
+                    html += " </div>  </div>  </div>  </div>  </div>";
+                }
+                console.log(html);
+                $("#data").append(html);
+            });
+        </script>
 
 </body>
 

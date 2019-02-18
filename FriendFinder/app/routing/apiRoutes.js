@@ -18,9 +18,26 @@ app.get("/api/friends", function (req, res) {
 });
 app.post("/api/friends", function (req, res) {
     var newFriend = req.body;
-    console.log(newFriend);
+    // console.log(newFriend);
+    var temptotal = 100;
+    var tempFriend;
+    //compare scores
+    for (var i = 0; i < friends.length; i++) {
+        for (var j = 0; j < friends[i].scores.length; j++) {
+            var diff = Math.abs(friends[i].scores[j] - newFriend.scores[j]);
+            // console.log(diff)
+            friends[i].totalDiff += diff;
+        }
+        //get friend with least difference
+        if (friends[i].totalDiff < temptotal) {
+            temptotal = friends[i].totalDiff;
+            tempFriend = friends[i];
+        }
+    }
+    //add new user to data
     friends.push(newFriend);
-    res.json(newFriend);
+    console.log(tempFriend);
+    res.json(tempFriend);
 });
 
 
