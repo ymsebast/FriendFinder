@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>HomePage</title>
+    <style>
+        body {
+            background-color: #ffebee;
+        }
+
+        .main {
+            margin: 50px 40px;
+        }
+
+        .card {
+            margin: 20px;
+        }
+
+        .friends {
+            margin-left: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav1">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Friend <i class="material-icons">child_care</i> <i
+                    class="material-icons right">child_care</i>
+                Finder
+            </a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <!-- Icons -->
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                <li><a href="/survey">Survey</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="row friends" id="data">
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $.get("/api/friends", function (data) {
+                console.log(data);
+                var html = "";
+                for (var i = 0; i < data.length; i++) {
+                    html += "<div class='row'> <div class='col s12 m7'> <div class='card'> <div class='card-image'><img src='";
+                    html += data.photo + "'>";
+                    html += "<span class='card-title'>" + data.name + "</span>";
+                    html += " </div>  </div>  </div>  </div>  </div>";
+                }
+                console.log(html);
+                $("#data").append(html);
+            });
+        </script>
+
+</body>
+
+</html>
